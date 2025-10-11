@@ -1,0 +1,43 @@
+# Node
+node_modules
+dist
+build
+*.log
+npm-debug.log
+package-lock.json
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+.pytest_cache
+.coverage
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Version Control
+.git
+.gitignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data
+data/
+*.sqlite3
+*.db

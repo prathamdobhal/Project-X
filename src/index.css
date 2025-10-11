@@ -1,0 +1,550 @@
+/* === OpsCoPilot Global Theme === */
+:root {
+  --bg: #0b1220;
+  --surface: #0f172a;
+  --surface-2: #111827;
+  --border: #1e2b44;
+  --text: #e6eef8;
+  --muted: #94a3b8;
+  --accent: #22d3ee;
+  --accent-2: #f59e0b;
+  --ok: #16a34a;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --radius: 14px;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* === Header === */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.subtle {
+  color: var(--muted);
+}
+
+/* === Sidebar === */
+.sidebar {
+  width: 68px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0;
+  gap: 20px;
+}
+
+.logo {
+  background: var(--accent);
+  color: #062034;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #172339;
+  color: var(--accent);
+}
+
+.nav-btn.active {
+  background: var(--accent);
+  color: #062034;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+}
+
+/* === Buttons & Inputs === */
+.btn {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.06s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  background: #0f213a;
+  border-color: #2a3a5b;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #062034;
+  border: none;
+  font-weight: 600;
+}
+
+.input {
+  background: #0d162b;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.input::placeholder {
+  color: #6b7a90;
+}
+
+/* === Cards, Tables, and Text === */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.table th,
+.table td {
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+/* === Welcome Page === */
+.welcome {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, rgba(34, 211, 238, 0.1), transparent 70%), var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: float 18s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 300px; height: 300px;
+  top: 10%; left: 15%;
+  background: #22d3ee;
+  animation-delay: 0s;
+}
+.orb2 {
+  width: 400px; height: 400px;
+  bottom: 0%; right: 10%;
+  background: #f59e0b;
+  animation-delay: 5s;
+}
+.orb3 {
+  width: 250px; height: 250px;
+  top: 65%; left: 35%;
+  background: #16a34a;
+  animation-delay: 10s;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.welcome-inner { text-align: center; z-index: 5; }
+.welcome-title {
+  font-size: 72px;
+  font-weight: 900;
+  margin: 0;
+}
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent) 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.welcome-sub {
+  margin-top: 16px;
+  max-width: 640px;
+  margin-inline: auto;
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.get-started {
+  margin-top: 48px;
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 28px;
+  transition: all 0.25s ease;
+}
+.get-started:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.4);
+}
+
+/* === Upload Page === */
+.upload-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at 50% 40%, rgba(34,211,238,0.06), transparent 70%), var(--bg);
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.upload-area {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  text-align: center;
+  padding: 4rem 2rem;
+  width: 100%;
+  max-width: 800px;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  cursor: pointer;
+}
+
+.upload-area.dragging {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+  box-shadow: 0 0 30px rgba(34,211,238,0.3);
+}
+
+.upload-status {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* === Chat Page === */
+.chat-fullscreen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(900px 400px at 10% 10%, rgba(34,197,94,0.05), transparent),
+              radial-gradient(600px 300px at 90% 80%, rgba(56,189,248,0.07), transparent),
+              #0b1220;
+  color: white;
+}
+
+/* Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #1e293b;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  flex-shrink: 0;
+}
+
+/* Chat Body */
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+/* Chat Input (compact) */
+.chat-input-wrap {
+  padding: 16px 18px 22px;
+  border-top: 1px solid #1e293b;
+  background: rgba(15,23,42,0.85);
+  flex-shrink: 0;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(2,6,23,0.7);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 8px 10px;
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.input-box:focus-within {
+  border-color: #38bdf8;
+  background: rgba(15,23,42,0.9);
+  box-shadow: 0 0 0 3px rgba(56,189,248,.10);
+}
+
+.input-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 15px;
+  padding: 8px 8px;
+  height: 38px;
+  line-height: 1.35;
+}
+
+.send-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 38px;
+  border-radius: 12px;
+  background: linear-gradient(90deg,#22c55e,#06b6d4);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .2s ease, filter .15s ease;
+}
+
+.send-btn:disabled {
+  filter: grayscale(.6) brightness(.85);
+  cursor: not-allowed;
+}
+
+.send-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(34,197,94,.35);
+}
+
+.input-warning {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #f87171;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==== Center Title + Subtitle ==== */
+.chat-placeholder {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  width: 90%;
+  max-width: 960px;
+}
+
+.chat-placeholder .chat-placeholder-title {
+  font-weight: 900;
+  font-size: 64px;
+  color: #0ea5e9;
+  letter-spacing: -0.5px;
+}
+
+.chat-placeholder .chat-placeholder-title span {
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.chat-placeholder .chat-placeholder-sub {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #94a3b8;
+}
+
+/* --- Fixed ChatGPT-style input bar --- */
+.chat-input {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  background: #041018;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 14px 18px calc(14px + env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: center;   /* centers the rail */
+}
+
+.chat-input .rail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 920px;          /* input rail width */
+  background: #06121a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  padding: 10px 12px;
+  box-shadow: 0 8px 26px rgba(0,0,0,.28);
+}
+
+.chat-input input[type="text"],
+.chat-input input {
+  flex: 1;
+  min-width: 0;              /* prevents overflow on narrow screens */
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 15px;
+  padding: 8px 6px;
+  height: 40px;
+  line-height: 1.35;
+  outline: none;
+}
+
+.chat-input input::placeholder {
+  color: #64748b;
+}
+
+.chat-input button {
+  flex: 0 0 auto;
+  height: 40px;
+  padding: 0 18px;
+  background: linear-gradient(180deg, #0ea5e9, #0284c7);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity .15s ease;
+}
+
+.chat-input button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.35);
+}
+
+.chat-input button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Leave space above the fixed footer so messages never hide */
+.chat-window {
+  padding-bottom: 120px;
+}
+/* ===== Chat alignment fixes (with 68px sidebar) ===== */
+:root {
+  --sidebar-w: 68px; /* width of your left sidebar */
+}
+
+/* Make the chat content column start after the sidebar */
+.chat-fullscreen {
+  position: relative;                    /* so the placeholder centers inside this */
+  margin-left: var(--sidebar-w);
+  width: calc(100% - var(--sidebar-w));
+}
+
+/* Fix the footer input rail so it lines up with content, not the viewport edge */
+.chat-input {
+  left: var(--sidebar-w);
+  width: calc(100% - var(--sidebar-w));
+}
+
+/* (Optional) If your placeholder was still off-center, this forces it to center
+   inside the chat content column (not the whole viewport) */
+.chat-placeholder {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* ===== FINAL chat alignment overrides ===== */
+/* If your sidebar is 68px wide, set it here once */
+:root { --sidebar-w: 68px; }
+
+/* 1) Make the whole chat column start after the sidebar */
+.chat-fullscreen,
+.chat-window,
+.chat-body {
+  margin-left: var(--sidebar-w) !important;
+  width: calc(100% - var(--sidebar-w)) !important;
+}
+
+/* 2) Fix the fixed footer input so it lines up with the content column */
+.chat-input {
+  position: fixed;
+  left: var(--sidebar-w) !important;
+  width: calc(100% - var(--sidebar-w)) !important;
+}
+
+/* 3) Ensure the big center watermark aligns inside the chat column */
+.chat-body { position: relative; }
+.chat-placeholder {
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* 4) Keep scrollable area above the fixed footer (avoid taskbar overlap) */
+.chat-window {
+  padding-bottom: 110px !important;
+}

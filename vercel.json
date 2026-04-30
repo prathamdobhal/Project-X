@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/api/:path*",
+      "source": "https://project-x-atsl.onrender.com/api/:path*",
       "destination": "https://YOUR-RENDER-BACKEND-URL.onrender.com/api/:path*"
     }
   ]

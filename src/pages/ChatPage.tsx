@@ -5,8 +5,8 @@ import "./ChatPage.css";
 /** ===================== Chat & Plot Services ===================== **/
 class ChatService {
   private apiKey: string;
-  private apiUrl: string = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent";
-  private model: string = "gemini-2.0-flash-exp";
+  private apiUrl: string = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+  private model: string = "gemini-2.0-flash";
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
@@ -83,7 +83,7 @@ class ChatService {
 }
 
 class PlottingService {
-  private apiUrl: string = "http://localhost:5000/plot";
+  private apiUrl: string = import.meta.env.VITE_FLASK_URL || "http://localhost:5000/plot";
 
   // Accept optional datasetCsv so the plotting backend can use the dataset sample/full CSV
   async generatePlot(plotCode: string, datasetCsv?: string) {
@@ -141,8 +141,8 @@ class PlottingService {
 }
 
 /** ===================== Constants & Utils ===================== **/
-const YOUR_API_KEY = import.meta.env.VITE_YOUR_API_KEY; // Replace with your Gemini API key
-const MODEL = "gemini-2.0-flash-exp";
+const YOUR_API_KEY = "AIzaSyDzuwlaP_V610VTl6M-vTEb5ifsj8inTx0"; // Replace with your Gemini API key
+const MODEL = "gemini-2.0-flash";
 const SYSTEM_PROMPT = `You are Ops CoPilot — an AI-powered assistant.
 Your role is to act as a domain-specialized operations chatbot that answers natural-language questions about mining or manufacturing datasets,
 performs analysis, and returns tables, charts, or summaries based on structured (CSV/MySQL/Timestream) and unstructured (PDF/docs) inputs.
@@ -205,9 +205,9 @@ function safeSplit(row: string) {
 
 function parseCSVSample(csvText: string, maxRows = 8) {
   const lines = csvText.split(/\r?\n/).filter((l) => l.trim() !== "");
-  if (lines.length === 0) return { header: [], rows: [], raw: "" };
+  if (lines.length === 0) return { header: [], rows: [] as string[][], raw: "" };
   const header = safeSplit(lines[0]);
-  const rows = [];
+  const rows: string[][] = [];
   for (let i = 1; i < Math.min(lines.length, 1 + maxRows); i++) {
     rows.push(safeSplit(lines[i]));
   }

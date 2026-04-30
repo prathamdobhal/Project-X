@@ -21,7 +21,7 @@ It speaks.
 
 ## Access & Live Demo
 
-* **Deployed Website:** [**https://your-project-link.com**](https://your-project-link.com)
+* **Deployed Website:** [**https://ops-sigma.vercel.app**]
 * **Mobile App (APK):** [`android/build/my-app.apk`](android/build/my-app.apk)
 
 ---
